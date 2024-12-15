@@ -17,6 +17,7 @@ func _physics_process(delta):
 	player_movement(delta)
 	enemy_attack()
 	attack()
+	current_camera()
 	
 	if health <= 0:
 		player_alive = false #go back to menu or respawn
