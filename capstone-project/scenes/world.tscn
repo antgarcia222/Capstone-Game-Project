@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://cij3rffai6poh"]
+[gd_scene load_steps=16 format=4 uid="uid://cij3rffai6poh"]
 
 [ext_resource type="Texture2D" uid="uid://bkvd4kylxhswy" path="res://art folder/Tiles/Path_Tile.png" id="1_ve8sm"]
 [ext_resource type="Texture2D" uid="uid://dujwh1f67cm01" path="res://art folder/Tiles/Grass_Middle.png" id="2_srx7e"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c1aw8pjew4dp6" path="res://art folder/Tiles/Cliff_Tile.png" id="5_4rnun"]
 [ext_resource type="Texture2D" uid="uid://cmms2s4imopyv" path="res://art folder/Tiles/Path_Middle.png" id="6_he2ub"]
 [ext_resource type="PackedScene" uid="uid://bdnu8gscgbqxf" path="res://scenes/player.tscn" id="7_rvusq"]
+[ext_resource type="PackedScene" uid="uid://dsgn0f4m3pyef" path="res://scenes/enemy.tscn" id="8_rb442"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2u4ls"]
 texture = ExtResource("2_srx7e")
@@ -122,3 +123,6 @@ tile_set = SubResource("TileSet_imvfy")
 y_sort_origin = 3
 
 [node name="player" parent="." instance=ExtResource("7_rvusq")]
+
+[node name="enemy" parent="." instance=ExtResource("8_rb442")]
+position = Vector2(123, 48)
