@@ -31,14 +31,13 @@ func _ready():
 	
 	
 
-func _process(delta: float) -> void:
-	change_scene()
 
 func position_to_next_wave():
 	if current_nodes == starting_nodes:
 		if current_wave != 0:
 			global.moving_to_next_wave = true
 		#anim
+		wave_spawn_ended = false
 		SceneTransitionAnimation.play("between_wave")
 		current_wave += 1
 		global.current_wave = current_wave
@@ -77,6 +76,13 @@ func spawn_type(type, mob_spawn_rounds, mob_wait_time):
 				await get_tree().create_timer(mob_wait_time).timeout
 			wave_spawn_ended = true
 
+func _process(delta: float) -> void:
+	change_scene()
+	
+	current_nodes = get_child_count()
+	if wave_spawn_ended:
+		position_to_next_wave()
+		
 
 
 
