@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var SceneTransitionAnimation = $SceneTransitionAnimation/AnimationPlayer
+@onready var SceneTransitionAnimation = $SceneTransitionAnimation2/AnimationPlayer
 
 var current_wave: int
 @export var slime_scene: PackedScene
@@ -8,6 +8,11 @@ var current_wave: int
 var starting_nodes: int
 var current_nodes: int
 var wave_spawn_ended
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,9 +26,13 @@ func _ready():
 	current_wave = 0
 	global.current_wave = current_wave
 	starting_nodes = get_child_count()
-	current_nodes - get_child_count() #constantly updated
+	current_nodes = get_child_count() #constantly updated
 	position_to_next_wave()
 	
+	
+
+func _process(delta: float) -> void:
+	change_scene()
 
 func position_to_next_wave():
 	if current_nodes == starting_nodes:
@@ -55,11 +64,11 @@ func spawn_type(type, mob_spawn_rounds, mob_wait_time):
 				var slime1 = slime_scene.instantiate()
 				slime1.global_position = slime_spawn1.global_position
 				var slime2 = slime_scene.instantiate()
-				slime1.global_position = slime_spawn2.global_position
+				slime2.global_position = slime_spawn2.global_position
 				var slime3 = slime_scene.instantiate()
-				slime1.global_position = slime_spawn3.global_position
+				slime3.global_position = slime_spawn3.global_position
 				var slime4 = slime_scene.instantiate()
-				slime1.global_position = slime_spawn4.global_position
+				slime4.global_position = slime_spawn4.global_position
 				add_child(slime1)
 				add_child(slime2)
 				add_child(slime3)
@@ -69,9 +78,6 @@ func spawn_type(type, mob_spawn_rounds, mob_wait_time):
 			wave_spawn_ended = true
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	change_scene()
 
 
 func _on_cliffside_transition_point_body_entered(body: Node2D) -> void:

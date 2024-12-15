@@ -184,9 +184,6 @@ y_sort_origin = 3
 [node name="player" parent="." instance=ExtResource("7_rvusq")]
 position = Vector2(396, 18)
 
-[node name="enemy" parent="." instance=ExtResource("8_rb442")]
-position = Vector2(123, 48)
-
 [node name="collisions" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="collisions"]
@@ -210,7 +207,7 @@ position = Vector2(182, 271)
 [node name="spawnpoint4" type="Marker2D" parent="."]
 position = Vector2(461, 235)
 
-[node name="SceneTransitionAnimation" parent="." instance=ExtResource("12_pmmjc")]
+[node name="SceneTransitionAnimation2" parent="." instance=ExtResource("12_pmmjc")]
 
 [connection signal="body_entered" from="cliffside_transition_point" to="." method="_on_cliffside_transition_point_body_entered"]
 [connection signal="body_exited" from="cliffside_transition_point" to="." method="_on_cliffside_transition_point_body_exited"]
