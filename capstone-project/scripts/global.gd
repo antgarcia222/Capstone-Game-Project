@@ -12,6 +12,10 @@ var player_start_posy = 180
 
 var game_first_loadin = true
 
+var current_wave: int
+var moving_to_next_wave: bool
+
+
 func finish_changescenes():
 	if transition_scene == true:
 		transition_scene = false

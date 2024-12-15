@@ -1,6 +1,6 @@
 [gd_scene load_steps=23 format=4 uid="uid://d4f8swwpva41j"]
 
-[ext_resource type="Script" path="res://scenes/cliff_side.gd" id="1_ecwnn"]
+[ext_resource type="Script" path="res://scripts/cliff_side.gd" id="1_ecwnn"]
 [ext_resource type="Texture2D" uid="uid://drkht5ihe58l1" path="res://art folder/Tiles/Water_Tile.png" id="1_xf2g1"]
 [ext_resource type="Texture2D" uid="uid://bdgw1yalqbpi5" path="res://art folder/Tiles/FarmLand_Tile.png" id="2_jjurd"]
 [ext_resource type="Texture2D" uid="uid://c14y6m8gidv2k" path="res://art folder/Tiles/Beach_Tile.png" id="3_4e0pw"]

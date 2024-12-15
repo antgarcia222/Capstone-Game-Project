@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cnsrn7folvfc0"]
 
-[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_3vcdq"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_3vcdq"]
 [ext_resource type="Texture2D" uid="uid://cusfdvt7vw7gq" path="res://art folder/Echoes of Valor.png" id="1_mjxk7"]
 [ext_resource type="FontFile" uid="uid://bp6p3kemol7jx" path="res://art folder/Popcat.otf" id="2_wf7mf"]
 
