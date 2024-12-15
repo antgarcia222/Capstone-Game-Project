@@ -1,6 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://dsgn0f4m3pyef"]
+[gd_scene load_steps=22 format=3 uid="uid://dsgn0f4m3pyef"]
 
-[ext_resource type="Script" path="res://scenes/enemy.gd" id="1_4v28s"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_4v28s"]
 [ext_resource type="Texture2D" uid="uid://w0a6l21wd653" path="res://art folder/Enemies/Slime.png" id="1_pwsec"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w6q3b"]
@@ -132,6 +132,9 @@ radius = 40.0125
 [sub_resource type="CircleShape2D" id="CircleShape2D_4u1ue"]
 radius = 6.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_u4p7f"]
+radius = 11.0
+
 [node name="enemy" type="CharacterBody2D"]
 z_index = 3
 y_sort_enabled = true
@@ -152,5 +155,12 @@ shape = SubResource("CircleShape2D_txk7i")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_4u1ue")
 
+[node name="enemy_hitbox" type="Area2D" parent="."]
+
+[node name="hitbox_collision" type="CollisionShape2D" parent="enemy_hitbox"]
+shape = SubResource("CircleShape2D_u4p7f")
+
 [connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
 [connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
+[connection signal="body_entered" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_entered"]
+[connection signal="body_exited" from="enemy_hitbox" to="." method="_on_enemy_hitbox_body_exited"]
